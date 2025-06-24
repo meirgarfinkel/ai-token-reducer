@@ -1,30 +1,13 @@
-# Simple AI Prompt Optimizer
+# AI Token Reducer Web App
+A simple, user-friendly web application designed to help AI prompt engineers and users optimize their prompts by intelligently reducing token count.
+This tool aims to make interacting with large language models (LLMs) more efficient and cost-effective.
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+# Features
+* **Token Reduction logic:** Uses AI to remove redundant phrases, and convert prompts to more concise and cost effective language.
+* **Real-time Feedback:** See percent of how reduced the optimized version is.
+* **Privacy:** No signup, user accounts, or memory at all.
+* **Clean Interface:** Intuitive design for a smooth user experience.
+* **Tech Stack:** Built with TypeScript, OpenAI, NextJs, Tailwind, and more.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/meirgarfinkel-5444s-projects/v0-simple-ai-prompt-optimizer)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/NqpCHpb5G2n)
-
-## Overview
-
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
-
-## Deployment
-
-Your project is live at:
-
-**[https://vercel.com/meirgarfinkel-5444s-projects/v0-simple-ai-prompt-optimizer](https://vercel.com/meirgarfinkel-5444s-projects/v0-simple-ai-prompt-optimizer)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/NqpCHpb5G2n](https://v0.dev/chat/projects/NqpCHpb5G2n)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+# Production Site
+https://token-reducer-meirgarfinkel-5444s-projects.vercel.app/
