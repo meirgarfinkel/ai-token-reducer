@@ -2,14 +2,15 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Loader2, Zap, Copy, Check } from "lucide-react"
+import { Loader2, Zap, Copy, Check, Sun, Moon } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
+import { useTheme } from "next-themes"
 
 export default function PromptOptimizer() {
   const [input, setInput] = useState("")
@@ -19,6 +20,13 @@ export default function PromptOptimizer() {
   const { toast } = useToast()
   const [autoClear, setAutoClear] = useState(true)
   const [originalInputLength, setOriginalInputLength] = useState(0)
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  // After mounting, we can access the theme
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const optimizePrompt = async () => {
     if (!input.trim()) {
@@ -87,8 +95,38 @@ export default function PromptOptimizer() {
     }
   }
 
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark"
+    setTheme(newTheme)
+  }
+
+  useEffect(() => {
+    console.log("Current theme:", theme)
+  }, [theme])
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+      {/* Theme Toggle Button */}
+      <div className="fixed top-4 right-4 z-50">
+        <Button
+          variant="outline"
+          size="icon"
+          className="rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border-slate-200 dark:border-slate-700"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          {mounted ? (
+            theme === "dark" ? (
+              <Sun className="h-5 w-5 text-yellow-500 transition-all" />
+            ) : (
+              <Moon className="h-5 w-5 text-slate-600 dark:text-slate-300 transition-all" />
+            )
+          ) : (
+            <div className="h-5 w-5" />
+          )}
+        </Button>
+      </div>
+
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-8">
