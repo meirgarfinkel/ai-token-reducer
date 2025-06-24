@@ -1,4 +1,4 @@
-# AI Token Reducer Web App
+# AI Token Reducer
 A simple, user-friendly web application designed to help AI prompt engineers and users optimize their prompts by intelligently reducing token count.
 This tool aims to make interacting with large language models (LLMs) more efficient and cost-effective.
 
